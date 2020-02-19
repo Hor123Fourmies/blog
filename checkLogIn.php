@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="styles.css">
+
+<body class="bodyOnglet">
+
 <?php
 
 $servername = "localhost";
@@ -24,5 +28,8 @@ if ($row['pseudo'] == $pseudo AND $row['password'] == $password) {
     $session['password'] = $_POST['password'];
     header('location: admin.php');
 } else {
-    echo "Erreur";
+    echo "Identifiants incorrects";
+    echo "<br>";
+    echo "Retour à la page d'accueil...";
+    header('Refresh:2;url=accueil.html');
 }

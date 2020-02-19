@@ -27,6 +27,12 @@ nav{
     font-weight: bold;
 }
 
+.bodyOnglet{
+    background: cadetblue;
+    font-family: Candara;
+}
+
+
 #spanIntro{
     font-family: "Javanese Text";
     font-size: 24px;
@@ -42,7 +48,7 @@ fieldset{
     padding-left: 40px;
     margin-top: 50px;
     font-family: Candara;
-    border-color: darkslateblue;
+    border-color: #263F40;
 }
 
 legend{
@@ -64,7 +70,7 @@ input{
 
 button{
     margin-top: 20px;
-    color: darkslateblue;
+    color: #263F40;
     font-weight: bold;
     background: lavender;
 }
@@ -74,4 +80,56 @@ button{
     flex-direction: column;
     text-align: left;
 
+}
+
+h2{
+    text-align: center;
+    font-size: 30px;
+    color: #263F40;
+}
+
+#divArticle{
+    display: flex;
+    flex-direction:column;
+    justify-content: start;
+}
+
+#divTxtImageComm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#spanId{
+    text-decoration: underline;
+    color: #263F40;
+    text-transform: capitalize;
+}
+
+#spanTitre{
+    font-size: 21px;
+    color: white;
+}
+
+#pContenu{
+    font-size: 17px;
+    margin-left: 25px;
+    width: 400px;
+    text-align: justify;
+}
+
+#spanDate{
+    font-style: italic;
+}
+
+#divPhoto{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+
+}
+
+#spanCommentaire{
+    font-style: italic; color: #263F40; font-weight: bold;
+    font-size: 20px;
 }
