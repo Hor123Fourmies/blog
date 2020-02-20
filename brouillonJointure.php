@@ -18,10 +18,11 @@ if (!isset($_GET['page'])) {
 $this_page_first_result = ($page - 1) * $limite;
 
 
-    $conn->select_db($dbname);
-    $sqlComment = "SELECT id, pseudo, comment, DATE_FORMAT(date, '%d-%m-%Y') as date FROM commentaires ORDER BY id DESC LIMIT " . $this_page_first_result . ',' . $limite;
-    // $sqlComment = "SELECT c.id, pseudo, comment, DATE_FORMAT(c.date, '%d-%m-%Y') as date FROM commentaires as c LEFT JOIN articles as a ON (c.id_article = a.id) ORDER BY c.id DESC";
-    $resultComment = mysqli_query($conn, $sqlComment);
+$conn->select_db($dbname);
+$sqlComment = "SELECT id, pseudo, comment, DATE_FORMAT(date, '%d-%m-%Y') as date FROM commentaires ORDER BY id DESC LIMIT " . $this_page_first_result . ',' . $limite;
+// $sqlComment = "SELECT c.id, pseudo, comment, DATE_FORMAT(c.date, '%d-%m-%Y') as date FROM commentaires as c LEFT JOIN articles as a ON (c.id_article = a.id) ORDER BY c.id DESC";
+
+$resultComment = mysqli_query($conn, $sqlComment);
     $conn->query($sqlComment);
     echo $conn->error;
 
@@ -42,3 +43,5 @@ $this_page_first_result = ($page - 1) * $limite;
     // $conn->close();
 
 ?>
+
+
