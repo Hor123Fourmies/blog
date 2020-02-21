@@ -36,7 +36,7 @@ if ($conn->connect_error) {
 }
 else {
     $conn->select_db($dbname);
-    $sql = "SELECT id, theme, titre, contenu, DATE_FORMAT(date, '%d-%m-%Y') as date, image FROM articles ORDER BY id DESC";
+    $sql = "SELECT id, theme, titre, contenu, DATE_FORMAT(date, '%d-%m-%Y') as date, image FROM articles WHERE theme = 'cityTrip' ORDER BY id DESC";
     //$sql = "SELECT a.id, titre, contenu, DATE_FORMAT(a.date, '%d-%m-%Y') as date, image, c.comment FROM articles as a LEFT JOIN commentaires as c ON (a.id = c.id_article) ORDER BY a.id DESC";
     $result = mysqli_query($conn, $sql);
     $conn->query($sql);
@@ -69,6 +69,9 @@ else {
         $count = $row['COUNT(*)'];
 
         switch ($count){
+            case $count ===0:
+                echo "Il n'y a aucun commentaire";
+                break;
             case $count < 2:
                 echo "Il y a ".$count." commentaire :";
                 break;
@@ -103,7 +106,7 @@ else {
 
         while ($row = mysqli_fetch_array($resultComment)) {
             ?>
-            <p><?= utf8_encode($row['comment']) ?></p>
+            <p id="pComment"><?= utf8_encode($row['comment']) ?></p>
             <span class="spanCommentaire"><?= "Rédigé le " . $row['date'] . "<br>" ?></span>
             <span class="spanCommentaire"><?= "Par " . $row['pseudo'] . "<br><br>" ?></span>
             <?php

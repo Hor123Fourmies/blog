@@ -144,6 +144,8 @@ img{
     border-top: #263F40 2px dashed;
     margin-left: 45px;
     margin-right: 45px;
+    height: 250px;
+    overflow: auto;
 }
 
 
@@ -154,4 +156,8 @@ img{
 
 #paginationCommentaires{
     float: right;
+}
+
+#pComment{
+    color: #651a1a;
 }
