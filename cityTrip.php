@@ -64,16 +64,22 @@ else {
 
         <?php
 
-        foreach ($conn->query('SELECT COUNT(*) FROM commentaires ') as $row) {
+        $total = $conn->query("SELECT COUNT(*) FROM `commentaires` where id_article = $id_article");
+        $row = mysqli_fetch_assoc($total);
+        $count = $row['COUNT(*)'];
 
-            echo "<span>" . "Il y a " . $row['COUNT(*)'] . " commentaires." . "</span>";
-            echo "<br>";
-
+        switch ($count){
+            case $count < 2:
+                echo "Il y a ".$count." commentaire :";
+                break;
+            case $count>1:
+                echo "Il y a ".$count." commentaires :";
+                break;
         }
 
-        $limite = 2;
-        $nbPages = ceil($row['COUNT(*)'] / $limite);
 
+        $limite = 2;
+        $nbPages = ceil($count / $limite);
 
         if (!isset($_GET['page'])) {
             $page = 1;
