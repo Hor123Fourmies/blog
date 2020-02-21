@@ -7,7 +7,7 @@
         <ul>
             <li class="navText"><a href="accueil.html">Accueil</a></li>
             <li>|</li>
-            <li class="navText"><a href="cityTrip.php" class="enCours">City-Trip</a></li>
+            <li class="navText"><a href="cityTrip.php">City-Trip</a></li>
             <li>|</li>
             <li class="navText"><a href="weekEnd.php" class="enCours">Week-end au vert</a></li>
             <li>|</li>

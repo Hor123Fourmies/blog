@@ -68,10 +68,25 @@ label{
     margin-bottom: 10px;
 }
 
-input{
+select {
     width: 250px;
     height: 24px;
     background: lavender;
+}
+
+
+input {
+    width: 250px;
+    height: 24px;
+    background: lavender;
+}
+
+
+textarea{
+    width: 250px;
+    background: lavender;
+    vertical-align: top;
+    margin-top: 15px;
 }
 
 button{
@@ -109,7 +124,7 @@ h2{
 
 
 img{
-    padding-top: 85px;
+
 }
 
 
