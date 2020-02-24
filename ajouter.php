@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="styles.css">
 
 <body class="bodyOnglet">
@@ -52,56 +53,67 @@ echo "<br><br>";
     <button type="submit">Se déconnecter</button>
 </form>
 
-<?php
-
-
-echo "Votre blog disposera d'un espace administrateur permettant d'écrire / modifier / supprimer les articles, 
-de modérer ( éditer ou supprimer ) les commentaires.";
-?>
-
-// Ajouter un article
-<div id="divAdmin">
-<fieldset class="fieldsetAdmin">
+<div>
+<fieldset>
     <legend>Ajouter un article :</legend>
-    <button type="submit" name="button"><a href="ajouter.php">Lien pour pouvoir ajouter un article</a></button>
+    <form action="" method="post">
+        <div>
+            <label for="theme">Thème :</label>
+            <select name="theme">
+                <option value=""></option>
+                <option value="cityTrip">City-Trip</option>
+                <option value="weekend">Week-end au vert</option>
+                <option value="Europe">Europe</option>
+                <option value="DestLoin">Destinations lointaines</option>
+            </select>
+        </div>
+        <div>
+            <label for="titre">Titre :</label>
+            <input type="text" id="titre" name="titre">
+        </div>
+        <div>
+            <label for="contenu">Contenu :</label>
+            <textarea id="contenu" name="contenu" rows="20" cols="10"></textarea>
+        </div>
+        <div>
+            <label for="date">Date :</label>
+            <input type="text" name="date">
+        </div>
+        <div>
+            <label for="image">Image :</label>
+            <input type="text" name="image">
+        </div>
+
+        <button type="submit" name="button">Ajouter un article</button>
+
+    </form>
+
 </fieldset>
 
-    <fieldset class="fieldsetAdmin">
-        <legend>Supprimer un article :</legend>
-        <button><a href="supprimeAffiche.php">Lien pour pouvoir supprimer un article</a></button>
-    </fieldset>
-
-    <fieldset class="fieldsetAdmin">
-        <legend>Modifier un article :</legend>
-        <button><a href="modifAffiche.php">Lien pour pouvoir modifier un article</a></button>
-    </fieldset>
-
-</div>
-
-
-</body>
 
 <?php
 
-
-$theme = isset($_POST['theme']);
-$titre = utf8_decode(isset($_POST['titre']));
-$contenu = utf8_decode(isset($_POST['contenu']));
-$date = isset($_POST['date']);
-$image = isset($_POST['image']);
-
-
+if (isset($_POST['theme'])){
+    $theme = $_POST['theme'];
+}
+if (isset($_POST['titre'])){
+    $titre = utf8_decode($_POST['titre']);
+}
+if (isset($_POST['contenu'])){
+    $contenu = utf8_decode($_POST['contenu']);
+}
+if (isset($_POST['date'])){
+    $date = $_POST['date'];
+}
+if (isset($_POST['image'])){
+    $image = $_POST['image'];
+}
 
 $sql = "INSERT INTO articles VALUES (NULL, '$theme', '$titre', '$contenu', '$date', '$image')";
-if ($conn->query($sql)){
-    echo "L'article <span style='font-weight: bold'>utf8_encode($titre)</span> a bien été ajouté.";
-}
-else{
+if ($conn->query($sql)) {
+    echo "L'article <span style='font-weight: bold'>$titre</span> a bien été ajouté.";
+} else {
     echo $conn->error;
 }
 
 ?>
-
-
-
-

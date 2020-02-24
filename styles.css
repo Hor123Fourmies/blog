@@ -176,3 +176,14 @@ img{
 #pComment{
     color: #651a1a;
 }
+
+#divAdmin{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.fieldsetAdmin {
+    margin: 50px;
+    width: 450px;
+}

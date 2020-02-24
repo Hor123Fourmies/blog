@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="styles.css">
 
 <body class="bodyOnglet">
@@ -52,56 +53,40 @@ echo "<br><br>";
     <button type="submit">Se déconnecter</button>
 </form>
 
+
+
+
 <?php
 
-
-echo "Votre blog disposera d'un espace administrateur permettant d'écrire / modifier / supprimer les articles, 
-de modérer ( éditer ou supprimer ) les commentaires.";
+// Supprimer un article
 ?>
+<fieldset>
+    <legend>Supprimer un article :</legend>
+    <?php
+    $conn->select_db($dbname);
 
-// Ajouter un article
-<div id="divAdmin">
-<fieldset class="fieldsetAdmin">
-    <legend>Ajouter un article :</legend>
-    <button type="submit" name="button"><a href="ajouter.php">Lien pour pouvoir ajouter un article</a></button>
-</fieldset>
+    $idA = isset($row['id']);
 
-    <fieldset class="fieldsetAdmin">
-        <legend>Supprimer un article :</legend>
-        <button><a href="supprimeAffiche.php">Lien pour pouvoir supprimer un article</a></button>
-    </fieldset>
-
-    <fieldset class="fieldsetAdmin">
-        <legend>Modifier un article :</legend>
-        <button><a href="modifAffiche.php">Lien pour pouvoir modifier un article</a></button>
-    </fieldset>
-
-</div>
-
-
-</body>
-
-<?php
-
-
-$theme = isset($_POST['theme']);
-$titre = utf8_decode(isset($_POST['titre']));
-$contenu = utf8_decode(isset($_POST['contenu']));
-$date = isset($_POST['date']);
-$image = isset($_POST['image']);
-
-
-
-$sql = "INSERT INTO articles VALUES (NULL, '$theme', '$titre', '$contenu', '$date', '$image')";
-if ($conn->query($sql)){
-    echo "L'article <span style='font-weight: bold'>utf8_encode($titre)</span> a bien été ajouté.";
-}
-else{
+    $recup = "SELECT id, theme, titre FROM articles ORDER BY id DESC";
+    //$sql = "SELECT a.id, titre, contenu, DATE_FORMAT(a.date, '%d-%m-%Y') as date, image, c.comment FROM articles as a LEFT JOIN commentaires as c ON (a.id = c.id_article) ORDER BY a.id DESC";
+    $result2 = mysqli_query($conn, $recup);
+    $conn->query($recup);
     echo $conn->error;
-}
 
-?>
+    while ($row = mysqli_fetch_array($result2)) {
 
+        ?>
 
+        <div id="">
+            <?php
 
-
+            echo"<button type=\"submit\" name=\"button\"><a href = 'supprimer.php?id=$idA'>Supprimer</a></button>";
+            echo "<br>";?>
+            <span><?php echo "Article n° : " . $row['id'] . "<br>" ?></span>
+            <span><?php echo utf8_encode($row['theme']) . "<br>" ?></span>
+            <span><?php echo utf8_encode($row['titre']) . "<br>" ?></span>
+        </div>
+        <?php
+    }
+    ?>
+</fieldset>

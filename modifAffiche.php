@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="styles.css">
 
 <body class="bodyOnglet">
@@ -52,56 +53,32 @@ echo "<br><br>";
     <button type="submit">Se déconnecter</button>
 </form>
 
-<?php
 
+<fieldset>
+    <legend>Modifier un article :</legend>
+    <?php
+    $conn->select_db($dbname);
 
-echo "Votre blog disposera d'un espace administrateur permettant d'écrire / modifier / supprimer les articles, 
-de modérer ( éditer ou supprimer ) les commentaires.";
-?>
+    $idA = isset($row['id']);
 
-// Ajouter un article
-<div id="divAdmin">
-<fieldset class="fieldsetAdmin">
-    <legend>Ajouter un article :</legend>
-    <button type="submit" name="button"><a href="ajouter.php">Lien pour pouvoir ajouter un article</a></button>
-</fieldset>
-
-    <fieldset class="fieldsetAdmin">
-        <legend>Supprimer un article :</legend>
-        <button><a href="supprimeAffiche.php">Lien pour pouvoir supprimer un article</a></button>
-    </fieldset>
-
-    <fieldset class="fieldsetAdmin">
-        <legend>Modifier un article :</legend>
-        <button><a href="modifAffiche.php">Lien pour pouvoir modifier un article</a></button>
-    </fieldset>
-
-</div>
-
-
-</body>
-
-<?php
-
-
-$theme = isset($_POST['theme']);
-$titre = utf8_decode(isset($_POST['titre']));
-$contenu = utf8_decode(isset($_POST['contenu']));
-$date = isset($_POST['date']);
-$image = isset($_POST['image']);
-
-
-
-$sql = "INSERT INTO articles VALUES (NULL, '$theme', '$titre', '$contenu', '$date', '$image')";
-if ($conn->query($sql)){
-    echo "L'article <span style='font-weight: bold'>utf8_encode($titre)</span> a bien été ajouté.";
-}
-else{
+    $recup = "SELECT id, theme, titre, contenu FROM articles ORDER BY id DESC";
+    $result = mysqli_query($conn, $recup);
+    $conn->query($recup);
     echo $conn->error;
-}
 
-?>
+    while ($row = mysqli_fetch_array($result)) {
+        $idA = isset($row['id']);
+        ?>
 
+        <div id="">
+            <?php
 
-
-
+            echo"<button type=\"submit\" name=\"button\"><a href = 'modifier.php?id=$idA'>Modifier</a></button>";
+            echo "<br>";?>
+            <span><?php echo "Article n° : " . $row['id'] . "<br>" ?></span>
+            <span><?php echo utf8_encode($row['titre']) . "<br>" ?></span>
+        </div>
+        <?php
+    }
+    ?>
+</fieldset>
