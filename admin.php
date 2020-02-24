@@ -79,7 +79,7 @@ de modérer ( éditer ou supprimer ) les commentaires.";
         </div>
         <div>
             <label for="contenu">Contenu :</label>
-            <input id="contenu" name="contenu">
+            <textarea id="contenu" name="contenu" rows="20" cols="10"></textarea>
         </div>
         <div>
             <label for="date">Date :</label>
@@ -104,10 +104,12 @@ if(isset($_POST['theme'])){
     $theme = $_POST['theme'];
 }
 if(isset($_POST['titre'])){
-    $titre = $_POST['titre'];
+    $titre = utf8_decode($_POST['titre']);
 }
 if(isset($_POST['contenu'])){
-    $contenu = $_POST['contenu'];
+    if ($_POST['contenu'] != ""){
+        $contenu = utf8_decode($_POST['contenu']);
+    }
 }
 if(isset($_POST['date'])){
     $date = $_POST['date'];
@@ -117,9 +119,9 @@ if(isset($_POST['image'])){
 }
 
 
-$sql = "INSERT INTO articles VALUES (NULL, '$theme', '$titre', '$contenu', '$date', 'luberon.jpg')";
+$sql = "INSERT INTO articles VALUES (NULL, '$theme', '$titre', '$contenu', '$date', '$image')";
 if ($conn->query($sql)){
-    echo "L'article <span style='font-weight: bold'>$titre</span> a bien été ajouté.";
+    echo "L'article <span style='font-weight: bold'>utf8_encode($titre)</span> a bien été ajouté.";
 }
 else{
     echo $conn->error;
