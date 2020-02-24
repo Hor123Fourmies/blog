@@ -67,7 +67,7 @@ echo "<br><br>";
     echo $conn->error;
 
     while ($row = mysqli_fetch_array($result)) {
-        $idA = isset($row['id']);
+        $idA = $row['id'];
         ?>
 
         <div id="">
