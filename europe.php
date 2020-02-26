@@ -52,6 +52,9 @@ else {
             <div id="divImgTxt">
                 <div id="divPhoto">
                     <img src="images/<?php echo $row["image"] ?>\">
+                    <?php
+                    echo "<button type=\"submit\" name='button'><a href='ajoutComment2.php?id=$id_article'>Ajouter un commentaire<a/></button>"
+                    ?>
                 </div>
 
                 <div id="divTexte">

@@ -32,7 +32,7 @@ $conn->select_db($dbname);
 
 
 $idA_get = $_GET['id'];
-echo $idA_get;
+// echo $idA_get;
 
 ?>
 <div>

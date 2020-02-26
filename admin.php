@@ -85,12 +85,12 @@ de modérer ( éditer ou supprimer ) les commentaires.";
 
         <fieldset class="fieldsetAdmin">
             <legend>Supprimer un commentaire :</legend>
-            <button><a href="">Lien pour pouvoir supprimer un commentaire</a></button>
+            <button type="submit" name="button"><a href="supprimeAfficheComment.php">Lien pour pouvoir supprimer un commentaire</a></button>
         </fieldset>
 
         <fieldset class="fieldsetAdmin">
             <legend>Modifier un commentaire :</legend>
-            <button><a href="">Lien pour pouvoir modifier un commentaire</a></button>
+            <button type="submit" name="button"><a href="">Lien pour pouvoir modifier un commentaire</a></button>
         </fieldset>
     </div>
 </div>
