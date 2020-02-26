@@ -73,11 +73,13 @@ $idA = $row['id'];
 
 ?>
 
-<form action="" method="post">
+<form action="update.php" method="post">
     <div>
+
         <div>
             <input type="hidden" name="id" value="<?php echo $idA_get; ?>">
         </div>
+
         <label for="theme">Thème :</label>
         <select name="theme">
             <option value="cityTrip"<?php if (utf8_encode($row['theme']) === 'cityTrip') {
@@ -102,12 +104,13 @@ $idA = $row['id'];
         <label for="titre">Titre :</label>
         <input type="text" name="titre" value="<?php echo utf8_encode($row['titre']) ?>">
     </div>
+
     <div>
-        <label for="contenu">Contenu :</label>
-        <textarea name="contenu" rows="20" cols="10" ><?php echo utf8_encode($row['contenu']) ?></textarea>
+        <label for="txtContenu">Contenu :</label>
+        <textarea name="txtContenu" rows="20" cols="10" ><?php echo utf8_encode($row['contenu']) ?></textarea>
     </div>
 <?php
-    echo "<button type=\"submit\" name=\"button\"><a href = 'update.php?id=$idA'>Mettre à jour</a></button>";
+    echo "<button type=\"submit\" name=\"button\">Mettre à jour</button>";
 ?>
 </form>
 <?php
