@@ -57,6 +57,7 @@ echo "<br><br>";
 
 $idA_post = isset($_POST['id']);
 $idA_get = $_GET['id'];
+
 echo "<br>";
 echo "Vous allez modifier l'article n° $idA_get.";
 echo "<br>";
@@ -98,35 +99,23 @@ $idA = $row['id'];
         </select>
     </div>
     <div>
-        <label for="theme">Titre :</label>
-        <input type="text" name=titre value="<?php echo utf8_encode($row['titre']) ?>">
+        <label for="titre">Titre :</label>
+        <input type="text" name="titre" value="<?php echo utf8_encode($row['titre']) ?>">
     </div>
     <div>
         <label for="contenu">Contenu :</label>
-        <textarea rows="20" cols="10"><?php echo utf8_encode($row['contenu']) ?></textarea>
+        <textarea name="contenu" rows="20" cols="10" ><?php echo utf8_encode($row['contenu']) ?></textarea>
     </div>
-
-    <button type="submit" name="button">Mettre à jour</button>
-
+<?php
+    echo "<button type=\"submit\" name=\"button\"><a href = 'update.php?id=$idA'>Mettre à jour</a></button>";
+?>
 </form>
 <?php
 }
-/*
-$theme = $row['theme'];
-$titre = $row['titre'];
-$contenu = $row['contenu'];
-
-$update = "UPDATE articles SET theme = '$theme', titre = '$titre', contenu = '$contenu' WHERE id=$idA";
-
-$conn->query($update);
-echo $conn->error;
-
-echo "<br><br>";
 
 
-if ($conn->query($update)) {
-    print "L'article n° <span style='font-weight: bold'>$idA</span> a bien été mis à jour.";
-} else {
-    print $conn->error;
-}
-*/
+
+
+
+
+

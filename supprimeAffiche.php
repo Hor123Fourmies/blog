@@ -68,7 +68,6 @@ echo "<br><br>";
     $idA = isset($row['id']);
 
     $recup = "SELECT id, theme, titre FROM articles ORDER BY id DESC";
-    //$sql = "SELECT a.id, titre, contenu, DATE_FORMAT(a.date, '%d-%m-%Y') as date, image, c.comment FROM articles as a LEFT JOIN commentaires as c ON (a.id = c.id_article) ORDER BY a.id DESC";
     $result2 = mysqli_query($conn, $recup);
     $conn->query($recup);
     echo $conn->error;

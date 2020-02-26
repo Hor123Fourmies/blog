@@ -72,7 +72,6 @@ echo "<br><br>";
 
         <div id="">
             <?php
-
             echo"<button type=\"submit\" name=\"button\"><a href = 'modifier.php?id=$idA'>Modifier</a></button>";
             echo "<br>";?>
             <span><?php echo "Article n° : " . $row['id'] . "<br>" ?></span>
