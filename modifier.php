@@ -55,10 +55,10 @@ echo "<br><br>";
 
 <?php
 
-$idA_post = $_POST['id'];
+$idA_post = isset($_POST['id']);
 $idA_get = $_GET['id'];
 echo "<br>";
-echo "Vous allez modifier l'article n° $idA_get";
+echo "Vous allez modifier l'article n° $idA_get.";
 echo "<br>";
 
 
@@ -68,24 +68,38 @@ $conn->query($recup);
 echo $conn->error;
 
 while ($row = $result3->fetch_assoc()) {
-    $idA = $row['id'];
-    ?>
+$idA = $row['id'];
+
+?>
+
 <form action="" method="post">
     <div>
+        <div>
+            <input type="hidden" name="id" value="<?php echo $idA_get; ?>">
+        </div>
         <label for="theme">Thème :</label>
         <select name="theme">
-        <option value="cityTrip"<?php if (utf8_encode($row['theme']) === 'cityTrip') { echo "selected = 'selected'";}?>>City-Trip</option>
-        <option value="weekEnd"<?php if (utf8_encode($row['theme']) === 'weekEnd') { echo "selected = 'selected'";} ?>>Week-End au vert</option>
-        <option value="europe"<?php if (utf8_encode($row['theme']) === 'europe') { echo "selected = 'selected'";} ?>>Europe</option>
-        <option value="destLoin"<?php if (utf8_encode($row['theme']) === 'destLoin') { echo "selected = 'selected'";} ?>>Destinations lointaines</option>
-
+            <option value="cityTrip"<?php if (utf8_encode($row['theme']) === 'cityTrip') {
+                echo "selected = 'selected'";
+            } ?>>City-Trip
+            </option>
+            <option value="weekEnd"<?php if (utf8_encode($row['theme']) === 'weekEnd') {
+                echo "selected = 'selected'";
+            } ?>>Week-End au vert
+            </option>
+            <option value="europe"<?php if (utf8_encode($row['theme']) === 'Europe') {
+                echo "selected = 'selected'";
+            } ?>>Europe
+            </option>
+            <option value="destLoin"<?php if (utf8_encode($row['theme']) === 'DestLoin') {
+                echo "selected = 'selected'";
+            } ?>>Destinations lointaines
+            </option>
         </select>
-
-
     </div>
     <div>
         <label for="theme">Titre :</label>
-        <input type="text" name=titre value="<?php echo utf8_encode($row['titre'])?>">
+        <input type="text" name=titre value="<?php echo utf8_encode($row['titre']) ?>">
     </div>
     <div>
         <label for="contenu">Contenu :</label>
@@ -97,7 +111,7 @@ while ($row = $result3->fetch_assoc()) {
 </form>
 <?php
 }
-
+/*
 $theme = $row['theme'];
 $titre = $row['titre'];
 $contenu = $row['contenu'];
@@ -115,3 +129,4 @@ if ($conn->query($update)) {
 } else {
     print $conn->error;
 }
+*/
