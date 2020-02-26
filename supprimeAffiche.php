@@ -53,8 +53,9 @@ echo "<br><br>";
     <button type="submit">Se déconnecter</button>
 </form>
 
-
-
+<form action="admin.php" method="post">
+    <button type="submit">Retour à la page Admin</button>
+</form>
 
 <?php
 

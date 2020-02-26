@@ -57,61 +57,57 @@ echo "<br><br>";
     <button type="submit">Retour à la page Admin</button>
 </form>
 
-<fieldset id="divModifAffiche">
-    <legend>Modifier un article :</legend>
+<div>
+    <fieldset>
+        <legend>Ajouter un commentaire :</legend>
+        <form action="" method="post">
+            <div>
+                <label for="id_article">Article n° :</label>
+                <input type="number" name="id_article">
+            </div>
+            <div>
+                <label for="pseudo">Pseudo :</label>
+                <input type="text" name="pseudo">
+            </div>
+            <div>
+                <label for="comment">Commentaire :</label>
+                <textarea type="text" name="comment" rows="5" cols="5"></textarea>
+            </div>
+            <div>
+                <label for="date">Date :</label>
+                <input type="text" name="date">
+            </div>
+
+            <button type="submit" name="button">Ajouter un commentaire</button>
+
+        </form>
+
+    </fieldset>
+
+
     <?php
-    $conn->select_db($dbname);
 
-    $idA = isset($row['id']);
-
-
-    $total = $conn->query("SELECT COUNT(*) FROM `articles`");
-    $row = mysqli_fetch_assoc($total);
-    $count = $row['COUNT(*)'];
-
-
-
-
-    $limite = 6;
-    $nbPages = ceil($count / $limite);
-
-    if (!isset($_GET['page'])) {
-        $page = 1;
-    } else {
-        $page = $_GET['page'];
+    if (isset($_POST['id_article'])){
+        $id_article = $_POST['id_article'];
+    }
+    if (isset($_POST['pseudo'])){
+        $pseudo = utf8_decode($_POST['pseudo']);
+    }
+    if (isset($_POST['comment'])){
+        $comment = utf8_decode($_POST['comment']);
+    }
+    if (isset($_POST['date'])){
+        $date = $_POST['date'];
     }
 
-    $this_page_first_result = ($page - 1) * $limite;
 
-
-
-    $recup = "SELECT id, theme, titre, contenu FROM articles ORDER BY id DESC LIMIT $this_page_first_result,$limite ";
-    $result = mysqli_query($conn, $recup);
-    $conn->query($recup);
-    echo $conn->error;
-
-    while ($row = mysqli_fetch_array($result)) {
-        $idA = $row['id'];
-        ?>
-
-        <div>
-            <?php
-            echo"<button type=\"submit\" name=\"button\"><a href = 'modifier.php?id=$idA'>Modifier</a></button>";
-            echo "<br>";?>
-            <span><?php echo "Article n° : " . $row['id'] . "<br>" ?></span>
-            <span><?php echo utf8_encode($row['titre']) . "<br>" ?></span>
-        </div>
-        <?php
+    $sql = "INSERT INTO commentaires VALUES (NULL, '$id_article', '$pseudo', '$comment', '$date')";
+    if ($conn->query($sql)) {
+        echo "<br>";
+        echo "<span style='color: #651a1a; padding: 15px; font-weight: bold'>Votre commentaire a bien été ajouté.</span>";
     }
+    else {
+        echo $conn->error;
+    }
+
     ?>
-
-
-
-</fieldset>
-<div id="paginationModifAffichage">
-    <?php
-    for ($page = 1; $page <= $nbPages; $page++) {
-        echo '<a href="modifAffiche.php?page=' . $page . '">' . $page . '</a> ';
-    }
-    ?>
-</div>

@@ -1,3 +1,26 @@
+
+<link rel="stylesheet" href="styles.css">
+
+<body class="bodyOnglet">
+
+<header>
+    <nav class="navText">
+        <ul>
+            <li class="navText"><a href="accueil.html">Accueil</a></li>
+            <li>|</li>
+            <li class="navText"><a href="cityTrip.php">City-trip</a></li>
+            <li>|</li>
+            <li class="navText"><a href="weekEnd.php">Week-end au vert</a></li>
+            <li>|</li>
+            <li class="navText"><a href="europe.php">Europe</a></li>
+            <li>|</li>
+            <li class="navText"><a href="destLointaine.php">Destinations lointaines</a></li>
+            <li>|</li>
+            <li class="navText" id="navAdmin"><a href="logIn.php">Admin</a></li>
+        </ul>
+    </nav>
+</header>
+
 <?php
 
 $servername = "localhost";
@@ -29,7 +52,7 @@ if(isset($_POST['titre'])){
     $titre = $_POST['titre'];
 }
 if(isset($_POST['txtContenu'])){
-    $txtContenu = $_POST['txtContenu'];
+    $txtContenu = utf8_decode($_POST['txtContenu']);
 }
 
 
@@ -47,7 +70,11 @@ echo "<br><br>";
 
 if ($conn->query($update)) {
     print "L'article <span style='font-weight: bold'>$idA_post</span> a bien été mis à jour.";
+    echo "<br><br>";
+    echo "Redirection vers la page administrateur.";
 }
 else {
     print $conn->error;
 }
+
+header('Refresh:2;url=admin.php');

@@ -59,25 +59,41 @@ echo "Votre blog disposera d'un espace administrateur permettant d'écrire / mod
 de modérer ( éditer ou supprimer ) les commentaires.";
 ?>
 
-// Ajouter un article
+
 <div id="divAdmin">
-<fieldset class="fieldsetAdmin">
-    <legend>Ajouter un article :</legend>
-    <button type="submit" name="button"><a href="ajouter.php">Lien pour pouvoir ajouter un article</a></button>
-</fieldset>
+    <div id="divAdmin1">
+        <fieldset class="fieldsetAdmin">
+            <legend>Ajouter un article :</legend>
+            <button type="submit" name="button"><a href="ajouter.php">Lien pour pouvoir ajouter un article</a></button>
+        </fieldset>
 
-    <fieldset class="fieldsetAdmin">
-        <legend>Supprimer un article :</legend>
-        <button><a href="supprimeAffiche.php">Lien pour pouvoir supprimer un article</a></button>
-    </fieldset>
+        <fieldset class="fieldsetAdmin">
+            <legend>Supprimer un article :</legend>
+            <button><a href="supprimeAffiche.php">Lien pour pouvoir supprimer un article</a></button>
+        </fieldset>
 
-    <fieldset class="fieldsetAdmin">
-        <legend>Modifier un article :</legend>
-        <button><a href="modifAffiche.php">Lien pour pouvoir modifier un article</a></button>
-    </fieldset>
+        <fieldset class="fieldsetAdmin">
+            <legend>Modifier un article :</legend>
+            <button><a href="modifAffiche.php">Lien pour pouvoir modifier un article</a></button>
+        </fieldset>
+    </div>
+    <div id="divAdmin2">
+        <fieldset class="fieldsetAdmin">
+            <legend>Ajouter un commentaire :</legend>
+            <button type="submit" name="button"><a href="ajoutComment.php">Lien pour pouvoir ajouter un commentaire</a></button>
+        </fieldset>
 
+        <fieldset class="fieldsetAdmin">
+            <legend>Supprimer un commentaire :</legend>
+            <button><a href="">Lien pour pouvoir supprimer un commentaire</a></button>
+        </fieldset>
+
+        <fieldset class="fieldsetAdmin">
+            <legend>Modifier un commentaire :</legend>
+            <button><a href="">Lien pour pouvoir modifier un commentaire</a></button>
+        </fieldset>
+    </div>
 </div>
-
 
 </body>
 

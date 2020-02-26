@@ -177,7 +177,13 @@ img{
     color: #651a1a;
 }
 
-#divAdmin{
+#divAdmin1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#divAdmin2{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -186,4 +192,13 @@ img{
 .fieldsetAdmin {
     margin: 50px;
     width: 450px;
+}
+
+#divModifAffiche{
+    height: 520px;
+}
+
+#paginationModifAffichage{
+    margin-top: 10px;
+    text-align: center;
 }

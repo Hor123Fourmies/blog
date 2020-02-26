@@ -53,6 +53,10 @@ echo "<br><br>";
     <button type="submit">Se déconnecter</button>
 </form>
 
+<form action="admin.php" method="post">
+    <button type="submit">Retour à la page Admin</button>
+</form>
+
 <div>
 <fieldset>
     <legend>Ajouter un article :</legend>
@@ -77,7 +81,7 @@ echo "<br><br>";
         </div>
         <div>
             <label for="date">Date :</label>
-            <input type="text" name="date">
+            <input type="number" name="date">
         </div>
         <div>
             <label for="image">Image :</label>
