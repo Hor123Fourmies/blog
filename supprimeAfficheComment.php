@@ -47,6 +47,17 @@ echo "Vous êtes bien connectée à la page Administrateur.";
 echo "<br><br>";
 
 ?>
+
+<span style="font-weight: bold">Pour retourner à la page d'accueil et déconnecter votre session, veuillez cliquer sur le bouton ci-dessous : </span>
+<form action="stopSession.php" method="post">
+    <button type="submit">Se déconnecter</button>
+</form>
+
+<form action="admin.php" method="post">
+    <button type="submit">Retour à la page Admin</button>
+</form>
+
+
 <fieldset>
     <legend>Supprimer un commentaire :</legend>
     <?php

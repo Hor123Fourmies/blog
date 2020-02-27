@@ -18,7 +18,6 @@ a{
     color:darkslateblue;
 }
 
-
 li{
     display: inline-block;
     padding: 10px;
@@ -33,19 +32,32 @@ li:hover{
     font-weight: bold;
 }
 
+#bodyAccueil{
+    font-family: Candara;
+    background: lavender;
+}
+
 .bodyOnglet{
     background: cadetblue;
     font-family: Candara;
 }
-
 
 #spanIntro{
     font-family: "Javanese Text";
     font-size: 24px;
 }
 
-img {
+#imgAccueil {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
 
+#pAccueil{
+    margin-left: 120px;
+    margin-right: 120px;
+    text-align: justify;
 }
 
 fieldset{
@@ -74,13 +86,11 @@ select {
     background: lavender;
 }
 
-
 input {
     width: 250px;
     height: 24px;
     background: lavender;
 }
-
 
 textarea{
     width: 250px;
@@ -100,7 +110,6 @@ button{
     display: flex;
     flex-direction: column;
     text-align: left;
-
 }
 
 h2{
@@ -131,7 +140,6 @@ h2{
 img{
 
 }
-
 
 #spanId{
     text-decoration: underline;
