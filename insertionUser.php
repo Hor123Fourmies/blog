@@ -15,13 +15,15 @@ $pseudo = $_POST['pseudo'];
 $password = $_POST['password'];
 
 
-$insertUser= "INSERT pseudo, password INTO users";
+$insertUser= "INSERT INTO users VALUES (NULL, pseudo, password)";
 $requete = $conn->query($insertUser);
 
 if ($requete){
     echo "bravo, vous êtes connecté";
 }
-
+else{
+    echo "erreur";
+}
 /*
 $row = $requete->fetch_assoc();
 
