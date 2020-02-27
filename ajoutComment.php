@@ -32,10 +32,12 @@ $dbname = "blog";
 $conn = new mysqli($servername, $username, $password);
 $conn->select_db($dbname);
 
+
 session_start();
 
 if(isset($_POST['pseudo'])){
     $session['pseudo'] = $_POST['pseudo'];
+    echo $_POST['pseudo'];
 }
 if(isset($_POST['password'])){
     $session['password'] = $_POST['password'];
@@ -67,7 +69,7 @@ echo "<br><br>";
             </div>
             <div>
                 <label for="pseudo">Pseudo :</label>
-                <input type="text" name="pseudo">
+                <input type="text" name="pseudo" value="Lola">
             </div>
             <div>
                 <label for="comment">Commentaire :</label>

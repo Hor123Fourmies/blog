@@ -22,7 +22,6 @@
 
 <?php
 
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -30,6 +29,7 @@ $dbname = "blog";
 
 $conn = new mysqli($servername, $username, $password);
 $conn->select_db($dbname);
+
 
 session_start();
 
