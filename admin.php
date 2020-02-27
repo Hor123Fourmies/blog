@@ -98,7 +98,7 @@ de modérer ( éditer ou supprimer ) les commentaires.";
 
         <fieldset class="fieldsetAdmin">
             <legend>Modifier un commentaire :</legend>
-            <button type="submit" name="button"><a href="">Lien pour pouvoir modifier un commentaire</a></button>
+            <button type="submit" name="button"><a href="modifAfficheComment.php">Lien pour pouvoir modifier un commentaire</a></button>
         </fieldset>
     </div>
 </div>
