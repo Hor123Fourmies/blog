@@ -40,8 +40,16 @@ if(isset($_POST['password'])){
     $session['password'] = $_POST['password'];
 }
 
+$sqlAdmin = "SELECT pseudo FROM admin";
+$result = mysqli_query($conn, $sqlAdmin);
+$conn->query($sqlAdmin);
+echo $conn->error;
 
-echo "Bonjour Lola !";
+while ($row = mysqli_fetch_array($result)) {
+    $pseudo = $row['pseudo'];
+}
+
+echo "Bonjour $pseudo !";
 echo "<br>";
 echo "Vous êtes bien connectée à la page Administrateur.";
 echo "<br><br>";

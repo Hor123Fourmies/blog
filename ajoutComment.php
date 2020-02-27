@@ -44,7 +44,16 @@ if(isset($_POST['password'])){
 }
 
 
-echo "Bonjour Lola !";
+$sqlAdmin = "SELECT pseudo FROM admin";
+$result = mysqli_query($conn, $sqlAdmin);
+$conn->query($sqlAdmin);
+echo $conn->error;
+
+while ($row = mysqli_fetch_array($result)) {
+    $pseudo = $row['pseudo'];
+}
+
+echo "Bonjour $pseudo !";
 echo "<br>";
 echo "Vous êtes bien connectée à la page Administrateur.";
 echo "<br><br>";
@@ -69,7 +78,7 @@ echo "<br><br>";
             </div>
             <div>
                 <label for="pseudo">Pseudo :</label>
-                <input type="text" name="pseudo" value="Lola">
+                <input type="text" name="pseudo" value="<?php echo $pseudo?>">
             </div>
             <div>
                 <label for="comment">Commentaire :</label>
