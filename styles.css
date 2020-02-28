@@ -227,9 +227,10 @@ img{
     li{
 
     }
-
+    
     #divArticle{
         margin: 20px;
+        font-size: 22px;
     }
 
     #divPhoto{
@@ -288,5 +289,24 @@ img{
 
     header{
         margin-bottom: 60px;
+    }
+
+    #navAccueil{
+        height: 120px;
+        background: darkslateblue;
+        padding-bottom: 25px;
+    }
+
+    #imgAccueil{
+
+    }
+
+    #spanIntro{
+        font-size: 26px;
+        margin-top: 40px;
+    }
+
+    #pAccueil{
+        font-size: 20px;
     }
 }
