@@ -16,6 +16,10 @@
             <li class="navText"><a href="destLointaine.php">Destinations lointaines</a></li>
             <li>|</li>
             <li class="navText" id="navAdmin"><a href="logIn.php">Admin</a></li>
+            <li>|</li>
+            <li class = "navText"><a href='identificationUser.php'>Créer un compte<a/></li>
+            <li>|</li>
+            <li class = "navText"><a href='identificationUser.php'>Créer un compte<a/></li>
         </ul>
     </nav>
 </header>

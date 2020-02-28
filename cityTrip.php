@@ -16,6 +16,8 @@
             <li class="navText"><a href="destLointaine.php">Destinations lointaines</a></li>
             <li>|</li>
             <li class="navText" id="navAdmin"><a href="logIn.php">Admin</a></li>
+            <li>|</li>
+            <li class = "navText"><a href='identificationUser.php'>Créer un compte<a/></li>
         </ul>
     </nav>
 </header>
@@ -52,8 +54,8 @@ else {
             <img src="images/<?php echo $row["image"] ?>\">
             <?php
             echo "<button type=\"submit\" name='button'><a href='ajoutComment2.php?id=$id_article'>Ajouter un commentaire<a/></button>";
-            echo "<button type=\"submit\" name='button'><a href='identificationUser.php'>S'identifier<a/></button>";
-            echo "<button type=\"submit\" name='button'><a href=''>Se connecter<a/></button>";
+            //echo "<button type=\"submit\" name='button'><a href='identificationUser.php'>Créer un compte<a/></button>";
+            // echo "<button type=\"submit\" name='button'><a href=''>Se connecter<a/></button>";
             ?>
         </div>
 
