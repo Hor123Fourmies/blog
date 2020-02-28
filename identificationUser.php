@@ -7,7 +7,7 @@
         <ul>
             <li class="navText"><a href="accueil.html">Accueil</a></li>
             <li>|</li>
-            <li class="navText"><a href="cityTrip.php" class="enCours">City-Trip</a></li>
+            <li class="navText"><a href="cityTrip.php">City-Trip</a></li>
             <li>|</li>
             <li class="navText"><a href="weekEnd.php">Week-end au vert</a></li>
             <li>|</li>
@@ -17,7 +17,7 @@
             <li>|</li>
             <li class="navText" id="navAdmin"><a href="logIn.php">Admin</a></li>
             <li>|</li>
-            <li class = "navText"><a href='identificationUser.php'>Créer un compte<a/></li>
+            <li class="navText" ><a class="enCours" href='identificationUser.php'>Créer un compte<a/></li>
         </ul>
     </nav>
 </header>

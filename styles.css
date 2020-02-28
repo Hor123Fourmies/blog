@@ -215,3 +215,78 @@ img{
     margin-top: 10px;
     text-align: center;
 }
+
+
+
+@media (max-width: 1138px)
+{
+    .bodyOnglet{
+
+    }
+
+    li{
+
+    }
+
+    #divArticle{
+        margin: 20px;
+    }
+
+    #divPhoto{
+        padding-right: 20px;
+
+    }
+
+    #pContenu{
+        width: 550px;
+        margin: 0;
+    }
+
+    .formAjoutCommentUser{
+        font-size: 36px;
+    }
+
+    #divAjoutCommentUser{
+        width: 550px;
+        margin: 0;
+    }
+
+    fieldset{
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 75px;
+    }
+
+
+    label{
+        width: 240px;
+        display: inline-block;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 24px;
+
+    }
+    input{
+        width: 550px;
+        height: 45px;
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    textarea{
+        width: 550px;
+        vertical-align: top;
+        margin-top: 15px;
+        height: 120px;
+    }
+
+    button{
+        height: 40px;
+        font-size: 22px;
+        padding: 6px;
+    }
+
+    header{
+        margin-bottom: 60px;
+    }
+}

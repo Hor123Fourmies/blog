@@ -39,10 +39,10 @@ $idA_get = $_GET['id'];
 // echo $idA_get;
 
 ?>
-<div>
+<div id="divAjoutCommentUser">
     <fieldset>
-        <legend>Ajouter un commentaire :</legend>
-        <form action="" method="post">
+        <legend class="formAjoutCommentUser">Ajouter un commentaire :</legend>
+        <form class="formAjoutCommentUser" action="" method="post">
             <div>
                 <label for="id_article">Article n° :</label>
                 <input type="text" name="id_article" value="<?php echo $idA_get;?>">
